@@ -28,6 +28,7 @@ class UsersController < ApplicationController
   end
 
   def login_form
+    render :login_form
   end
 
   def login_user
@@ -36,7 +37,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
       flash[:success] = "Welcome back #{@user.name}"
     else
-      flash[:error] = @user.errors.full_messages
+      flash[:error] = "Invalid email/password"
       render :login_form
     end
   end

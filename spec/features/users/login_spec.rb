@@ -22,4 +22,19 @@ RSpec.describe 'user login page' do
       expect(current_path).to eq(user_path(user1))
     end
   end
+
+  describe 'sad path' do
+    it 'shows an error with a flash message if user fails to enter in correct credentials' do
+      user2 = User.create!(name: "Gimli", email: "boutdatdwarflife@email.com", password: "youhavemyaxe", password_confirmation: "youhavemyaxe")
+
+      visit '/login'
+
+      fill_in 'Email', with: user2.email
+      fill_in 'Password', with: 'dwarvesarenaturalsprinters'
+      click_on 'Login'
+
+      expect(page).to have_content("Invalid email/password")
+    end
+  end
 end
+
