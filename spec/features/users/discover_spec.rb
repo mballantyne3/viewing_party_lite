@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Discover page' do
   before :each do
-    @user = User.create(name: 'Sunny', email: 'sunny@email.com')
+    @user = User.create(name: 'Sunny', email: 'sunny@email.com', password: 'password', password_confirmation: 'password')
 
     visit "/users/#{@user.id}/discover"
   end

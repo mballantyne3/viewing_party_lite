@@ -46,6 +46,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     arel (9.0.0)
     ast (2.4.2)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -253,6 +254,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   capybara
   coffee-rails (~> 4.2)
@@ -281,4 +283,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.3.20
+   2.3.24

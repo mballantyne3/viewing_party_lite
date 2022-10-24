@@ -1,0 +1,10 @@
+<h1>Welcome Back! Let's Login</h1>
+
+<%= form_with url: '/login', method: :post, local: true do |f|  %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <%= f.submit 'Login' %>
+<% end %>
