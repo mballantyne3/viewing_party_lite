@@ -15,12 +15,15 @@ RSpec.describe 'New User' do
 
     fill_in 'Name', with: 'Sunny'
     fill_in 'Email', with: 'sunny@email.com'
+    fill_in 'Password:', with: 'testpw'
+    fill_in 'Password Confirmation:', with: 'testpw'
     click_on 'Register'
+
+    expect(page).to have_content('Welcome, Sunny!')
 
     user = User.last
     expect(user.name).to eq('Sunny')
     expect(user.email).to eq('sunny@email.com')
     expect(current_path).to eq(user_path(user.id))
-    expect(page).to have_content('Welcome, Sunny!')
   end
 end

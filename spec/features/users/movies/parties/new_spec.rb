@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'parties/new' do
   before :each do
-    @user = User.create(name: 'Sunny', email: 'sunny@email.com')
+    @user = User.create(name: 'Sunny', email: 'sunny@email.com', password: 'something_creative', password_confirmation: 'something_creative')
   end
   it 'shows the name of the movie at the top', vcr: 'viewing_party' do
     movie = MovieFacade.find(550)
@@ -24,18 +24,18 @@ RSpec.describe 'parties/new' do
     expect(page).to have_select('_start_time_4i', with_selected: Time.now.strftime("%I %p"))
   end
   it 'has checkboxes for all users that can be invited', vcr: 'viewing_party' do
-    user2 = User.create(name: 'Mary', email: 'mary@email.com')
-    user3 = User.create(name: 'Bob', email: 'Bob@email.com')
-    user4 = User.create(name: 'Phillip', email: 'Phillip@email.com')
+    user2 = User.create(name: 'Mary', email: 'mary@email.com', password: 'something_creative', password_confirmation: 'something_creative')
+    user3 = User.create(name: 'Bob', email: 'Bob@email.com', password: 'anything_creative', password_confirmation: 'anything_creative')
+    user4 = User.create(name: 'Phillip', email: 'Phillip@email.com', password: 'something_new', password_confirmation: 'something_new')
     movie = MovieFacade.find(550)
     visit new_user_movie_party_path(@user.id, movie.id)
     # save_and_open_page
     expect(page).to have_content('mary@email.com')
   end
   it 'form can create a new viewing party', vcr: 'viewing_party' do
-    user2 = User.create(name: 'Mary', email: 'mary@email.com')
-    user3 = User.create(name: 'Bob', email: 'Bob@email.com')
-    user4 = User.create(name: 'Phillip', email: 'Phillip@email.com')
+    user2 = User.create(name: 'Mary', email: 'mary@email.com', password: 'something_creative', password_confirmation: 'something_creative')
+    user3 = User.create(name: 'Bob', email: 'Bob@email.com', password: 'something_new', password_confirmation: 'something_new')
+    user4 = User.create(name: 'Phillip', email: 'Phillip@email.com', password: 'something_pw', password_confirmation: 'something_pw')
     
     visit new_user_movie_party_path(@user.id, 550)
 
@@ -49,9 +49,5 @@ RSpec.describe 'parties/new' do
     check "user_ids[#{user3.id}]"
     click_button 'Create Party'
     expect(current_path).to eq(user_path(@user.id))
-  end
-
-  it 'displays the checked users on a users show page and lists the host and other attendees' do
-
   end
 end

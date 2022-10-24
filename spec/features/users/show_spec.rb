@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User show page' do
   before :each do
-    @user = User.create(name: 'Sunny', email: 'sunny@email.com')
+    @user = User.create(name: 'Sunny', email: 'sunny@email.com', password: 'something_creative', password_confirmation: 'something_creative')
 
     visit user_path(@user.id)
   end
@@ -24,9 +24,9 @@ RSpec.describe 'User show page' do
   end
 
   it 'has a section that lists the viewing parties the user is invited to', vcr: 'party_movie_details' do
-    @user1 = User.create!(name: "Mary", email: 'random_email@gmail.com')
-    @user2 = User.create!(name: "Legolas", email: 'youhavemybow@gmail.com')
-    @user3 = User.create!(name: "Gimli", email: 'andmyaxe@gmail.com')
+    @user1 = User.create!(name: "Mary", email: 'random_email@gmail.com', password: 'something_creative', password_confirmation: 'something_creative')
+    @user2 = User.create!(name: "Legolas", email: 'youhavemybow@gmail.com', password: 'elf_lyfe', password_confirmation: 'elf_lyfe')
+    @user3 = User.create!(name: "Gimli", email: 'andmyaxe@gmail.com', password: 'dwarf_lifeeee', password_confirmation: 'dwarf_lifeeee')
     @party1 = Party.create!(duration: 170, start_time: '2022-10-31 11:30:00 UTC', movie_id: 123, movie_title: 'Spirited Away')
     @party2 = Party.create!(duration: 170, start_time: '2022-12-15 12:30:00 UTC', movie_id: 456, movie_title: 'The Dark Knight')
     @party1.users << @user1
