@@ -44,6 +44,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout_user
+    user = User.find_by(email: params[:email])
+    #currently not sure how to verify if a user is logged in, maybe use:
+    # if session[:user_id] = user.id
+  end
+
   private
 
   def user_params
