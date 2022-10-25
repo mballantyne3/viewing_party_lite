@@ -44,15 +44,17 @@ http_interactions:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
+      - 1.1 9204cf44179493ed42c678800a26918a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - D21nTwtutiDLACY1oBjE7w7Tgc_12wyFqhuiBIEEyjdV_txTRb6B6Q==
+      - HqCPPQjkNk9ZCj1DXbwZMbkgFB6HlE-VoAl7cKfC0LY_bMJGBJrZCg==
+      Age:
+      - '3379'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/jOuCWdh0BE6XPu2Vpjl08wDAeFz.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":14,"name":"Fantasy"}],"homepage":"","id":123,"imdb_id":"tt0077869","original_language":"en","original_title":"The
@@ -62,7 +64,7 @@ http_interactions:
         Zaentz Film Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"ES","name":"Spain"},{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1978-11-15","revenue":30471420,"runtime":132,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fantasy...beyond
         your imagination","title":"The Lord of the Rings","video":false,"vote_average":6.571,"vote_count":679}'
-  recorded_at: Tue, 25 Oct 2022 19:17:05 GMT
+  recorded_at: Tue, 25 Oct 2022 20:13:24 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/456?api_key=7167fae23251322593f42f52cefd735a
@@ -107,16 +109,76 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - sNnensztyhDqXX8i_5nhyO2wt6LKmoPaqb2cWwHqXd3yjR5Nx_oyLw==
+      - RDI0ZVJ9Kpne5Ih9aqui3soL_t2Nn1Zi27ggl1a5-9brM9e1gKwBGA==
+      Age:
+      - '3378'
     body:
       encoding: ASCII-8BIT
       string: '{"success":false,"status_code":34,"status_message":"The resource you
         requested could not be found."}'
-  recorded_at: Tue, 25 Oct 2022 19:17:06 GMT
+  recorded_at: Tue, 25 Oct 2022 20:13:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/456?api_key=7167fae23251322593f42f52cefd735a
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 25 Oct 2022 19:17:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - 31feae3a0d6de7e07948aeec07542d285f3eced6
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '14777'
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - zauRdWNddpv7IV7jVqYTWTez33KjQDcA01A15VKSXJSQqdsWWXSfhw==
+      Age:
+      - '3378'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Tue, 25 Oct 2022 20:13:24 GMT
 recorded_with: VCR 6.1.0

@@ -1,5 +1,5 @@
 <h3>Register as a new user:</h3>
-<%= form_with model: @user, method: :post, url: users_path, local: true do |f| %>
+<%= form_with model: @user, method: :post, url: "/users", local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>
   <%= f.label :email %>

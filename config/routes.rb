@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   get '/discover', to: 'users#discover'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
+  get '/dashboard', to: 'users#show'
+  post '/users', to: 'users#create'
 
-  resources :users, only: %i[show create] do
+  resources :users, only: %i[create] do
     resources :movies, only: %i[show index] do
       resources :parties, only: %i[new create]
     end
