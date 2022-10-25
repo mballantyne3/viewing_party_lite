@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 24 Oct 2022 16:54:35 GMT
+      - Tue, 25 Oct 2022 19:17:05 GMT
       Server:
       - openresty
       Cache-Control:
@@ -35,34 +35,34 @@ http_interactions:
       X-Memc-Key:
       - c33f1ae3ad898e8abd8e3235daac6c22b7770a22
       X-Memc-Age:
-      - '3825'
+      - '12832'
       X-Memc-Expires:
-      - '13036'
+      - '1925'
       Etag:
-      - W/"faabee8f33073b8cab5b6dc2035b210d"
+      - W/"5e2a19c3b4d7394f0e25d73bbba80f53"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - b2y1Ydq_FywNz30EAuMAsFsTgJwrSlv6FhtgrR6RDX_KXUwP4n31rw==
+      - D21nTwtutiDLACY1oBjE7w7Tgc_12wyFqhuiBIEEyjdV_txTRb6B6Q==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/jOuCWdh0BE6XPu2Vpjl08wDAeFz.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":14,"name":"Fantasy"}],"homepage":"","id":123,"imdb_id":"tt0077869","original_language":"en","original_title":"The
         Lord of the Rings","overview":"The Fellowship of the Ring embark on a journey
-        to destroy the One Ring and end Sauron''s reign over Middle-earth.","popularity":49.9,"poster_path":"/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg","production_companies":[{"id":286,"logo_path":null,"name":"Fantasy
+        to destroy the One Ring and end Sauron''s reign over Middle-earth.","popularity":36.485,"poster_path":"/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg","production_companies":[{"id":286,"logo_path":null,"name":"Fantasy
         Films","origin_country":""},{"id":4921,"logo_path":null,"name":"Bakshi Productions","origin_country":""},{"id":141322,"logo_path":null,"name":"Saul
         Zaentz Film Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"ES","name":"Spain"},{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1978-11-15","revenue":30471420,"runtime":132,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fantasy...beyond
         your imagination","title":"The Lord of the Rings","video":false,"vote_average":6.571,"vote_count":679}'
-  recorded_at: Mon, 24 Oct 2022 16:54:35 GMT
+  recorded_at: Tue, 25 Oct 2022 19:17:05 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/456?api_key=7167fae23251322593f42f52cefd735a
@@ -88,7 +88,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 24 Oct 2022 16:54:35 GMT
+      - Tue, 25 Oct 2022 19:17:06 GMT
       Server:
       - openresty
       Cache-Control:
@@ -100,23 +100,23 @@ http_interactions:
       X-Memc-Age:
       - '0'
       X-Memc-Expires:
-      - '17483'
+      - '14777'
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 38059ba65876500c040fb73e2cbaebf4.cloudfront.net (CloudFront)
+      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - cqYx6TcTLw6-52H4VVfHATnx4aWzlf8avrfIyANZHyfbiX5SERmRfQ==
+      - sNnensztyhDqXX8i_5nhyO2wt6LKmoPaqb2cWwHqXd3yjR5Nx_oyLw==
     body:
       encoding: ASCII-8BIT
       string: '{"success":false,"status_code":34,"status_message":"The resource you
         requested could not be found."}'
-  recorded_at: Mon, 24 Oct 2022 16:54:35 GMT
+  recorded_at: Tue, 25 Oct 2022 19:17:06 GMT
 recorded_with: VCR 6.1.0

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
     if @user.save
       redirect_to user_path(@user.id)
+      session[:user_id] = @user.id
       flash[:success] = "Welcome, #{@user.name}!"
     else
       flash[:error] = @user.errors.full_messages
@@ -33,8 +34,9 @@ class UsersController < ApplicationController
 
   def login_user
     @user = User.find_by(email: params[:email])
-    if @user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       redirect_to user_path(@user.id)
+      session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.name}"
     else
       flash[:error] = "Invalid email/password"

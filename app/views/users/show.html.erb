@@ -1,6 +1,6 @@
 <h3><%= "#{@user.name}'s " %>Dashboard Page</h3>
 
-<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+<p><%= button_to "Discover Movies", "/discover", method: :get %></p>
 
 <h4><%= "#{@user.name}'s " %>Viewing Parties</h4>
 <% @user.parties.each do |party| %>

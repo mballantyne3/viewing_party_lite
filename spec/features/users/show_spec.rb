@@ -6,6 +6,11 @@ RSpec.describe 'User show page' do
   before :each do
     @user = User.create(name: 'Sunny', email: 'sunny@email.com', password: 'something_creative', password_confirmation: 'something_creative')
 
+    visit '/login'
+
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
+    click_on 'Login'
     visit user_path(@user.id)
   end
   it 'has the users name at top' do
@@ -20,7 +25,7 @@ RSpec.describe 'User show page' do
   it 'clicking discover movies takes me to the discover page' do
     click_on 'Discover Movies'
 
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'has a section that lists the viewing parties the user is invited to', vcr: 'party_movie_details' do

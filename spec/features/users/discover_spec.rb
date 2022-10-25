@@ -5,8 +5,11 @@ require 'rails_helper'
 RSpec.describe 'Discover page' do
   before :each do
     @user = User.create(name: 'Sunny', email: 'sunny@email.com', password: 'password', password_confirmation: 'password')
-
-    visit "/users/#{@user.id}/discover"
+    visit '/login'
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
+    click_on 'Login'
+    visit "/discover"
   end
 
   it 'has a button for top rated movies', vcr: 'top_rated.json' do
@@ -27,6 +30,6 @@ RSpec.describe 'Discover page' do
   it 'has a button to return to the discover page', :vcr do
     visit "/users/#{@user.id}/movies"
     click_button 'Return to Discover'
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 end
