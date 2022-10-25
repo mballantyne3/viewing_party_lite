@@ -1,13 +1,13 @@
 <h1>Viewing Party Lite</h1>
 
-<%= button_to "Create New User", '/register', method: :get %>
-<%= button_to "Log In", '/login', method: :get %>
-
+<%= button_to "Create New User", '/register', method: :get unless session[:user_id] %>
+<%= button_to "Log In", '/login', method: :get unless session[:user_id] %>
+<%= button_to "Logout", '/logout', method: :delete, local: true %>
 
 <div id="existing_users">
   <% @users.map do |user| %>
     <ul>
-      <li><%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %></li>
+      <li><%= link_to "#{user.email}'s Dashboard", "/dashboard" %></li>
     </ul>
   <% end %>
 </div>

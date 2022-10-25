@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   root to: 'landing#index'
 
   get '/register', to: 'users#new'
-  get '/users/:id/discover', to: 'users#discover'
+  get '/discover', to: 'users#discover'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
+  get '/dashboard', to: 'users#show'
+  post '/users', to: 'users#create'
+  delete '/logout', to: 'users#logout_user'
 
-  resources :users, only: %i[show create] do
+  resources :users, only: %i[create] do
     resources :movies, only: %i[show index] do
-      resources :parties, only: %i[new create] 
+      resources :parties, only: %i[new create]
     end
   end
 end

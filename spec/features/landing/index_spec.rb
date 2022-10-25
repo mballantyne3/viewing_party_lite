@@ -16,6 +16,11 @@ RSpec.describe 'landing page', type: :feature do
     @mary = User.create!(name: 'Mary', email: 'newbie_coder24@gmail.com', password: 'password', password_confirmation: 'password')
     @sunny = User.create!(name: 'Sunny', email: 'newemail@gmail.com', password: 'something', password_confirmation: 'something')
     @mackinley = User.create!(name: 'MacKinley', email: 'mrmansemail@gmail.com', password: 'anything', password_confirmation: 'anything')
+
+    visit '/login'
+    fill_in 'Email', with: @mary.email
+    fill_in 'Password', with: @mary.password
+    click_on 'Login'
     visit '/'
 
     within('#existing_users') do
@@ -23,7 +28,7 @@ RSpec.describe 'landing page', type: :feature do
       expect(page).to have_content("newemail@gmail.com's Dashboard")
 
       click_on "newbie_coder24@gmail.com's Dashboard"
-      expect(current_path).to eq("/users/#{@mary.id}")
+      expect(current_path).to eq("/dashboard")
     end
   end
 

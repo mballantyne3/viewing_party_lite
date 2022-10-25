@@ -28,7 +28,7 @@ RSpec.describe 'New User' do
       user = User.last
       expect(user.name).to eq('Sunny')
       expect(user.email).to eq('sunny@email.com')
-      expect(current_path).to eq(user_path(user.id))
+      expect(current_path).to eq('/dashboard')
     end
   end
 

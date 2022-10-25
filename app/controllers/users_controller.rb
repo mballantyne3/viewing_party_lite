@@ -4,11 +4,11 @@ class UsersController < ApplicationController
   def index; end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -19,7 +19,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to user_path(@user.id)
+      redirect_to '/dashboard'
+      session[:user_id] = @user.id
       flash[:success] = "Welcome, #{@user.name}!"
     else
       flash[:error] = @user.errors.full_messages
@@ -33,13 +34,20 @@ class UsersController < ApplicationController
 
   def login_user
     @user = User.find_by(email: params[:email])
-    if @user.authenticate(params[:password])
-      redirect_to user_path(@user.id)
+    if @user && @user.authenticate(params[:password])
+      redirect_to '/dashboard'
+      session[:user_id] = @user.id
       flash[:success] = "Welcome back #{@user.name}"
     else
       flash[:error] = "Invalid email/password"
       render :login_form
     end
+  end
+
+  def logout_user
+    user = User.find_by(email: params[:email])
+    #currently not sure how to verify if a user is logged in, maybe use:
+    # if session[:user_id] = user.id
   end
 
   private

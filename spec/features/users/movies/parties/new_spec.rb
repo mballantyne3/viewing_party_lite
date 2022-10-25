@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe 'parties/new' do
   before :each do
     @user = User.create(name: 'Sunny', email: 'sunny@email.com', password: 'something_creative', password_confirmation: 'something_creative')
+    visit '/login'
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
+    click_on 'Login'
   end
   it 'shows the name of the movie at the top', vcr: 'viewing_party' do
     movie = MovieFacade.find(550)
@@ -48,6 +52,6 @@ RSpec.describe 'parties/new' do
     check "user_ids[#{user2.id}]"
     check "user_ids[#{user3.id}]"
     click_button 'Create Party'
-    expect(current_path).to eq(user_path(@user.id))
+    expect(current_path).to eq('/dashboard')
   end
 end

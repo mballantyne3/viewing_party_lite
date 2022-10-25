@@ -32,7 +32,7 @@ class PartiesController < ApplicationController
       end
     end
 
-    redirect_to user_path(@user)
+    redirect_to '/dashboard'
   end
 
   def parse_date_params

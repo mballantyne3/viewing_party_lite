@@ -1,4 +1,4 @@
-<%= button_to 'Return to Discover', "/users/#{@user.id}/discover", method: :get %>
+<%= button_to 'Return to Discover', "/discover", method: :get %>
 <% if params[:search].present? %>
   <h2>Movie results</h2>
 <% else %>
